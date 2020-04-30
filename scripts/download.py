@@ -31,7 +31,7 @@ def download(url, dirpath):
         print("Cannot write %s" % filepath)
         raise Exception
     try:
-        filesize = int(u.info().getheaders("Content-Length")[0])
+        filesize = int(u.info().get("Content-Length"))
     except:
         print("URL %s failed to report length" % url)
         raise Exception
